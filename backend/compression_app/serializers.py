@@ -10,10 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {'password': {'write_only': True}}
 
-        def create(self, validated_data):
-            validated_data['password'] = make_password(validated_data['password'])
-            user = CustomUser.objects.create_user(**validated_data)
-            return user
+    def create(self, validated_data):
+        validated_data['password'] = make_password(validated_data['password'])
+        user = CustomUser.objects.create_user(**validated_data)
+        return user
         
         
 class GuestUserSerializers(serializers.ModelSerializer):
