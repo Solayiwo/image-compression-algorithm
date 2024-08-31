@@ -1,5 +1,9 @@
 from rest_framework import generics, permissions
-from django.contrib.auth import authenticate, login
+#from django.contrib.auth import authenticate, login
+#from rest_framework_simplejwt.tokens import RefreshToken
+#rom django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth import get_user_model, login
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import CustomUser, GuestUser, CompressionTask
@@ -15,7 +19,49 @@ class SignUpView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
+
 class LoginView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        
+        User = get_user_model()
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return Response({'message': 'Invalid credentials'}, status=400)
+
+        if user and check_password(password, user.password) and user.is_active:
+            login(request, user)
+            return Response({'message': 'Login successful'})
+        return Response({'message': 'Invalid credentials'}, status=400)
+    
+
+"""class LoginView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        User = get_user_model()
+
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return Response({'message': 'Invalid credentials'}, status=400)
+
+        if user and user.check_password(password) and user.is_active:
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            })
+
+        return Response({'message': 'Invalid credentials'}, status=400)"""
+
+"""class LoginView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def post(self, request, *args, **kwargs):
@@ -23,10 +69,10 @@ class LoginView(APIView):
         password = request.data.get('password')
         user = authenticate(request, username=username, password=password)
 
-        if user:
+        if user and user.is_active:
             login(request, user)
             return Response({'message': 'Login successful'})
-        return Response({'message': 'Invalid credentials'}, status=400)
+        return Response({'message': 'Invalid credentials'}, status=400)"""
     
 class ImageUploadView(generics.CreateAPIView):
     queryset = CompressionTask.objects.all()

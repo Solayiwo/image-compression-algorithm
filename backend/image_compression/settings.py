@@ -53,6 +53,8 @@ REST_FRAMEWORK = {
     ],
 }
 
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -119,8 +121,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Password Hashers Configuration
 
-PASSWORD_HASHERS = [
+"""PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher'
+]"""
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 # Internationalization
