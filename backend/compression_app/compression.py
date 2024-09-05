@@ -1,15 +1,18 @@
 from PIL import Image # type: ignore
-import os
+import io
 
 
 def compress_image(image, compression_type):
-    img_path = image.path
-    with Image.open(img_path) as img:
-        if compression_type == "lossy":
-            compressed_img_path = f"{os.path.splitext(img_path)[0]}_lossy.jpg"
-            img.save(compressed_img_path, "JPEG", quality=70)
-        else:
-            compressed_img_path = f"{os.path.splitext(img_path)[0]}_lossless.png"
-            img.save(compressed_img_path, "PNG", optimizer=True)
-    
-    return compressed_img_path
+    img = Image.open(image)
+
+    compressed_io = io.BytesIO()
+
+    if compression_type == "lossy":
+        #img = img.convert('RGB')
+        img.save(compressed_io, "JPEG", quality=70)
+    else:
+        img = img.convert('P', palette=Image.ADAPTIVE, colors=256)
+        img.save(compressed_io, "PNG", optimize=True)
+        
+    compressed_io.seek(0)
+    return compressed_io
