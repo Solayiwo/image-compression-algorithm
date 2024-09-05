@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Image Compression Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Compression Tool</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">API</a></li>
+            <li><a href="#">Signup</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+   <section class="container">
+        <div class="header">
+            <h1>Image Compression Tool</h1>
+        </div>
+
+        <form action="#" method="POST" enctype="multipart/form-data" class="compression-form">
+            <div class="form-group">
+                <label for="image-upload">Upload your image:</label>
+                <input type="file" id="image-upload" name="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="compression-type">Select Compression Type:</label>
+                <select id="compression-type" name="compression-type" required>
+                    <option value="lossy">Lossy Compression</option>
+                    <option value="lossless">Lossless Compression</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Compress Image</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>Contact us: <a href="mailto:support@compressiontool.com">support@compressiontool.com</a></p>
+    </footer>
+</body>
+</html>
+
