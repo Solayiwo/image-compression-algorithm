@@ -1,0 +1,62 @@
+.body {
+    
+    align-items: justify;
+    display: grid;
+    justify-content: center; 
+
+    .text {
+        display: grid;
+        justify-content: center; 
+    }
+    
+    .work-area {
+        margin-top: 30px;
+        // background-color: aquamarine;
+        width: 800px;
+        height: 300px;
+        display: grid;
+        justify-content: center;
+        border: 3px dashed #050A44;
+    
+    }
+
+    // button {
+        //     font-size: 18px;
+        //     height: 65px;
+        //     width: 250px;
+        //     border-radius: 10px;
+        //     border: none;
+        //     // box-shadow: 1px 1px 0px 2px rgba (0,0,0,0.3);
+        // color: white;
+        // background-color: #044b04;
+        //     cursor: pointer;
+        
+    button {
+        margin-top: 30px;
+        min-width: 165px;
+        width: 250px;
+        height: 65px;
+        letter-spacing: 0.5px;
+        height: 65px;
+        padding: 0 35px 0 35px;
+        font-size: 18px;
+        background: #050A44;
+        color: #0A21C0;
+        text-transform: uppercase;
+        // font-family: 'Open Sans Condensed';
+        font-weight: bolder;
+        border: none;
+        cursor: pointer;
+  
+        &:hover {
+        background-color: #b3b4bd;
+        color: #050A44;
+        border: 1px solid #050A44;
+        }
+    }
+
+
+    .drop-file {
+        margin-left: 50px;
+    }
+}

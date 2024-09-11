@@ -1,0 +1,33 @@
+.header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: auto;
+    border-color: black;
+    background-color: #050A44;
+    // position: fixed;
+    
+    
+    .logo-container {
+        height: 100%;
+        width: 70px;
+        padding: 25px;
+    }
+    
+    .options {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: right;
+        justify-content: flex-end;
+        padding-right: 80px;
+        
+    }
+    .option {
+        color: #0a21c0;
+        padding: 50px 5px;
+        margin: auto;
+         
+      }
+  }
