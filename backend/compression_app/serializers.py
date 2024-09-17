@@ -19,7 +19,7 @@ class UserSerializer(serializers.ModelSerializer):
 class GuestUserSerializers(serializers.ModelSerializer):
     class Meta:
         model = GuestUser
-        field = '__all__'
+        fields = '__all__'
     
     def create(self, validated_data):
             guest_user = GuestUser.objects.create_user(**validated_data)
@@ -29,5 +29,4 @@ class GuestUserSerializers(serializers.ModelSerializer):
 class ImageCompressionSerializer(serializers.ModelSerializer):
     class Meta:
         model = CompressionTask
-        field = '__all__'
-        ('id', 'user', 'guest_user', 'original_image', 'compressed_image', 'compression_type', 'uploaded_at')
+        fields = '__all__'
