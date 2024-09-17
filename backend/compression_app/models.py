@@ -19,8 +19,8 @@ class GuestUser(models.Model):
 class CompressionTask(models.Model):
     user = models.ForeignKey(CustomUser, null=True, blank=True, on_delete=models.SET_NULL)
     guest_user = models.ForeignKey(GuestUser, null=True, blank=True, on_delete=models.SET_NULL)
-    original_image = models.ImageField(upload_to='original_images/')
-    compressed_image = models.ImageField(upload_to='compressed_images/', null=True, blank=True)
+    #original_image = models.ImageField(upload_to='original_images/')
+    compressed_image = models.ImageField(upload_to='compressed_images/')
     compression_type = models.CharField(max_length=10, choices=[('lossy', 'Lossy'), ('lossless', 'Lossless')])
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
