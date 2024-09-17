@@ -16,12 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from compression_app.views import SignUpView, LoginView, ImageUploadView, PDFReportView
+from compression_app.views import SignUpView, LoginView, ImageCompressView, PDFReportView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', SignUpView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
-    path('upload/', ImageUploadView.as_view(), name='upload_image'),
+    path('compress/', ImageCompressView.as_view(), name='upload_image'),
     path('pdf_report/', PDFReportView.as_view(), name='pdf_report'),
 ]
