@@ -11,12 +11,12 @@ Read more about the project in our detailed blog post [here](https://your-blog-p
 
 Connect with the author on LinkedIn:
 
-    - [Olayiwola Sulaimon](https://www.linkedin.com/in/olayiwola-sulaimon/)
-    - [Sudais Sumaila](https://www.linkedin.com/in/sumaila-sudais-ballah-38795b235/)
-    - [Bereket Meketa](https://www.linkedin.com/in/your-profile-link/)
+- [Olayiwola Sulaimon](https://www.linkedin.com/in/olayiwola-sulaimon/)
+- [Sudais Sumaila](https://www.linkedin.com/in/sumaila-sudais-ballah-38795b235/)
+- [Bereket Meketa](https://www.linkedin.com/in/your-profile-link/)
 
 <!-- Replace with a link to an actual screenshot of your app -->
-![App Screenshot](app.jpeg)
+![App Screenshot](./app.jpeg)
 
 ## Installation
 
