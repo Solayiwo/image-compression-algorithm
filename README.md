@@ -7,7 +7,7 @@ This project is an image compression web application that allows users to upload
 You can visit the deployed version of the project [here](https://your-deployed-site-link.com).
 
 
-Read more about the project in our detailed blog post [here](https://your-blog-post-link.com).
+Read more about the project in our detailed blog post [here](https://www.linkedin.com/pulse/building-efficient-image-compression-application-olayiwola-sulaimon-ka2hf).
 
 Connect with the author on LinkedIn:
 
