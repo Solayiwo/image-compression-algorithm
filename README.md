@@ -89,7 +89,7 @@ The inspiration behind this project stemmed from the growing need for optimized 
 
 ## What We Struggled With
 
-While the core functionality of the application works well, we faced challenges with the user experience, particularly around handling larger images efficiently and ensuring that the compression process run successfully. This is an area I aim to improve in future iterations.
+While the core functionality of the application works well, we faced challenges with the user experience, particularly around handling larger images efficiently and ensuring that the compression process run successfully. This is an area we aim to improve in future iterations.
 
 ## Next Iteration
 
