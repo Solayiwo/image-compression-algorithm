@@ -77,7 +77,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Story & Technical Challenges
 
-The inspiration behind this project stemmed from the growing need for optimized image handling on websites and mobile applications, particularly for users with low bandwidth. As someone passionate about backend development and efficiency, I was excited to build a solution that compresses images without losing their quality.
+The inspiration behind this project stemmed from the growing need for optimized image handling on websites and mobile applications, particularly for users with low bandwidth. We were excited to build a solution that compresses images without losing their quality.
 
 ## Key Challenges
 
